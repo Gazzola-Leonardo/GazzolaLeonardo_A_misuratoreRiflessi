@@ -58,6 +58,7 @@ void tempoLed(){
   ledTempo = numRandom;
   lcd.print("Led: ");
   lcd.print(ledTempo);
+  lcd.print(" ms");
   while(digitalRead(buttonPin) == HIGH);
 }
 void tempoBuzzer(){
@@ -67,6 +68,7 @@ void tempoBuzzer(){
   buzzerTempo = numRandom;
   lcd.print("Buzzer: ");
   lcd.print(buzzerTempo);
+  lcd.print(" ms");
   while(digitalRead(buttonPin) == HIGH);
 }
 void calcolaMedia(){
@@ -76,6 +78,7 @@ void calcolaMedia(){
   lcd.begin(16, 2);
   lcd.print("Media: ");
   lcd.print(media);
+  lcd.print(" ms");
   lcd.setCursor(0, 1);
   if(media < 600){
     lcd.print("Test passato!!");
