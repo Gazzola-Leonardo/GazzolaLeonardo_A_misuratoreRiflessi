@@ -5,13 +5,12 @@ const int buttonPin = 13;
 const int ledPin =  12;   
 const int buzzerPin = 8;
 
-int numRandom = 0;
-int tempo = 0;
-int tempo2 = 0;       
+double numRandom = 0;
+int tempo = 0;  
  
 void setup() {
-  //Serial.begin(9600);
-  //Serial.println("Seriale attiva");
+  Serial.begin(9600);
+  Serial.println("Seriale attiva");
   pinMode(ledPin, OUTPUT);
   pinMode(buttonPin, INPUT);
   pinMode(buzzerPin, OUTPUT);
@@ -21,6 +20,7 @@ void setup() {
 
 void loop() {
   while(digitalRead(buttonPin) == LOW);
+  while(digitalRead(buttonPin) == HIGH);
   accendiLed();
   tempoLed();
   tone(buzzerPin, 1000, 500);
@@ -28,17 +28,18 @@ void loop() {
   while(digitalRead(buttonPin) == HIGH);
 }
 void accendiLed(){
-  numRandom = random(1000, 3000);
-  tempo = millis();
-  while(numRandom != millis() - tempo);
+  numRandom = random(1000, 2000) + millis();
+  while(numRandom > millis());
   digitalWrite(ledPin, HIGH);
   delay(200);
   digitalWrite(ledPin, LOW);
-  while(numRandom == millis() - tempo);
+  //while(numRandom == millis());
 }
 void tempoLed(){
   while(digitalRead(buttonPin) == LOW);
   lcd.begin(16, 2);
-  lcd.print(millis() - numRandom - tempo);
+  numRandom = millis() - numRandom;
+  tempo = numRandom;
+  lcd.print(tempo);
   while(digitalRead(buttonPin) == HIGH);
 }
