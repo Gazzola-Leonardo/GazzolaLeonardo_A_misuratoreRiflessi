@@ -94,17 +94,16 @@ void calcolaMedia(){
 void azzera(){
   while(digitalRead(buttonPin) == HIGH){};
   while(digitalRead(buttonPin) == LOW){};
-  long t = millis();
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Azzeramento. ");
-  while(millis() - t < 1000){ };
+  delay(1000);
   lcd.setCursor(0, 0);
   lcd.print("Azzeramento..");
-  while(millis() - t < 2000){ };
+  delay(1000);
   lcd.setCursor(0, 0);
   lcd.print("Azzeramento...");
-  while(millis() - t < 3000){ };
+  delay(1000);
   setup();
   while(digitalRead(buttonPin) == HIGH){};
 }
