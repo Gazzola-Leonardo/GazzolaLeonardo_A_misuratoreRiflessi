@@ -22,10 +22,4 @@ L'immagine fa vedere:
 
 ![](Immagini/3.jpg)
 
-<br><br><br><br>
-
-## Cos'è arduino?
-
-Arduino è una piattaforma hardware composta da una serie di schede elettroniche dotate di un microcontrollore. È stata ideata e sviluppata in data 2003 da alcuni membri dell'Interaction Design Institute di Ivrea come strumento per la prototipazione rapida e per scopi hobbistici, didattici e professionali.<br><br>
-_Fonte: https://it.wikipedia.org/wiki/Arduino_(hardware)_
 <br>
